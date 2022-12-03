@@ -2,6 +2,13 @@
     "name": "wedesignit/parcel-pro-php-api-client",
     "description": "PHP Client for the Parcel Pro API",
     "type": "library",
+    "keywords": [
+        "Parcel Pro",
+        "Parcel Pro API client",
+        "MijnPakketDienst",
+        "MijnPakketDienst API client",
+        "WeDesignIt"
+    ],
     "require": {
         "guzzlehttp/guzzle": "^6|^7",
         "php": "^7.1|^8.0",
