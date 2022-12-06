@@ -41,9 +41,9 @@ class Shipment implements \ArrayAccess
      *
      * @param int $id
      *
-     * @return $this
+     * @return self
      */
-    public function shipmentId(int $id): Shipment
+    public function shipmentId(int $id): self
     {
         $this->offsetSet(self::SHIPMENT_ID, $id);
 
@@ -55,9 +55,9 @@ class Shipment implements \ArrayAccess
      *
      * @param string $orderNumber
      *
-     * @return $this
+     * @return self
      */
-    public function orderNumber(string $orderNumber): Shipment
+    public function orderNumber(string $orderNumber): self
     {
         $this->offsetSet(self::ORDERNUMBER, $orderNumber);
 
@@ -69,9 +69,9 @@ class Shipment implements \ArrayAccess
      *
      * @param string $reference
      *
-     * @return $this
+     * @return self
      */
-    public function reference(string $reference): Shipment
+    public function reference(string $reference): self
     {
         $this->offsetSet(self::REFERENCE, $reference);
 
@@ -83,9 +83,9 @@ class Shipment implements \ArrayAccess
      *
      * @param DateTime $from
      *
-     * @return $this
+     * @return self
      */
-    public function since(DateTime $from): Shipment
+    public function since(DateTime $from): self
     {
         return $this->from($from);
     }
@@ -95,9 +95,9 @@ class Shipment implements \ArrayAccess
      *
      * @param DateTime $from
      *
-     * @return $this
+     * @return self
      */
-    public function from(DateTime $from): Shipment
+    public function from(DateTime $from): self
     {
         $this->offsetSet(self::FROM_DATETIME, $from->format('Y-m-d H:i:s'));
 
@@ -109,9 +109,9 @@ class Shipment implements \ArrayAccess
      *
      * @param DateTime $to
      *
-     * @return $this
+     * @return self
      */
-    public function to(DateTime $to): Shipment
+    public function to(DateTime $to): self
     {
         $this->offsetSet(self::TO_DATETIME, $to->format('Y-m-d H:i:s'));
 
@@ -123,9 +123,9 @@ class Shipment implements \ArrayAccess
      *
      * @param string $status
      *
-     * @return $this
+     * @return self
      */
-    public function status(string $status): Shipment
+    public function status(string $status): self
     {
         $this->offsetSet(self::STATUS, $status);
 
@@ -137,9 +137,9 @@ class Shipment implements \ArrayAccess
      *
      * @param int $limit
      *
-     * @return $this
+     * @return self
      */
-    public function limit(int $limit): Shipment
+    public function limit(int $limit): self
     {
         $limit = min($limit, 50);
 
@@ -153,9 +153,9 @@ class Shipment implements \ArrayAccess
      *
      * @param string $order
      *
-     * @return $this
+     * @return self
      */
-    public function order(string $order): Shipment
+    public function order(string $order): self
     {
         $this->offsetSet(self::ORDER, $order);
 
