@@ -7,7 +7,7 @@ use Throwable;
 class ParcelProException extends \Exception
 {
 
-    protected $codes = [
+    protected array $codes = [
         4  => 'Given status not valid',
         7  => 'Unknown country',
         8  => 'Invalid sender address',
@@ -22,7 +22,7 @@ class ParcelProException extends \Exception
     ];
 
     public function __construct(
-        $code = 0,
+        int $code = 0,
         Throwable $previous = null
     ) {
         $message = $this->codes[$code] ?? 'Unknown error';

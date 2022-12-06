@@ -32,7 +32,7 @@ class Shipment extends Resource
     /**
      * @return string[]
      */
-    public function getRequiredFields()
+    public function getRequiredFields(): array
     {
         return [
             self::CARRIER, self::TYPE, self::PACKAGE_COUNT, self::WEIGHT,
@@ -43,7 +43,7 @@ class Shipment extends Resource
     /**
      * Fluent setter
      *
-     * @param  string  $carrier
+     * @param string $carrier
      *
      * @return $this
      */
@@ -57,7 +57,7 @@ class Shipment extends Resource
     /**
      * Fluent setter
      *
-     * @param  string  $type
+     * @param string $type
      *
      * @return $this
      */
@@ -69,7 +69,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  bool  $signature
+     * @param bool $signature
      *
      * @return $this
      */
@@ -96,7 +96,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  bool  $eveningDelivery
+     * @param bool $eveningDelivery
      *
      * @return $this
      */
@@ -108,7 +108,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  bool  $saturdayDelivery
+     * @param bool $saturdayDelivery
      *
      * @return $this
      */
@@ -120,19 +120,19 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  bool  $elevenHundredDelivery
+     * @param bool $elevenHundredDelivery
      *
      * @return $this
      */
-    public function elevenHundredDelivery(bool $elevenHundredDelivery = true
-    ): Shipment {
+    public function elevenHundredDelivery(bool $elevenHundredDelivery = true): Shipment
+    {
         $this->offsetSet(self::ELEVENHUNDRED_DELIVERY, $elevenHundredDelivery);
 
         return $this;
     }
 
     /**
-     * @param  bool  $handIn
+     * @param bool $handIn
      *
      * @return $this
      */
@@ -144,7 +144,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  float  $amount
+     * @param float $amount
      *
      * @return $this
      */
@@ -156,7 +156,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  float  $amount
+     * @param float $amount
      *
      * @return $this
      */
@@ -168,7 +168,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  bool  $letterboxDelivery
+     * @param bool $letterboxDelivery
      *
      * @return $this
      */
@@ -180,7 +180,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  string  $bankAccount
+     * @param string $bankAccount
      *
      * @return $this
      */
@@ -192,7 +192,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  string  $reference
+     * @param string $reference
      *
      * @return $this
      */
@@ -204,7 +204,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  \DateTime  $moment
+     * @param \DateTime $moment
      *
      * @return $this
      */
@@ -216,7 +216,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  Sender  $sender
+     * @param Sender $sender
      *
      * @return $this
      */
@@ -231,7 +231,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  Sender  $sender
+     * @param Sender $sender
      *
      * @return $this
      */
@@ -246,7 +246,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  Receiver  $receiver
+     * @param Receiver $receiver
      *
      * @return $this
      */
@@ -261,7 +261,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  int  $packageCount
+     * @param int $packageCount
      *
      * @return $this
      */
@@ -273,7 +273,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  float  $weight
+     * @param float $weight
      *
      * @return $this
      */
@@ -285,7 +285,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  int  $length
+     * @param int $length
      *
      * @return $this
      */
@@ -297,7 +297,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  int  $width
+     * @param int $width
      *
      * @return $this
      */
@@ -309,7 +309,7 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  int  $height
+     * @param int $height
      *
      * @return $this
      */
@@ -321,21 +321,21 @@ class Shipment extends Resource
     }
 
     /**
-     * @param  int  $length
-     * @param  int  $width
-     * @param  int  $height
+     * @param int $length
+     * @param int $width
+     * @param int $height
      *
      * @return $this
      */
     public function dimensions(int $length, int $width, int $height): Shipment
     {
         return $this->length($length)
-                    ->width($width)
-                    ->height($height);
+            ->width($width)
+            ->height($height);
     }
 
     /**
-     * @param  string  $remark
+     * @param string $remark
      *
      * @return $this
      */

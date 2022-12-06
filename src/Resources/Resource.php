@@ -8,7 +8,7 @@ use WeDesignIt\ParcelPro\Interfaces\HasRequiredFields;
 class Resource implements \ArrayAccess, Arrayable, HasRequiredFields
 {
 
-    protected $data = [];
+    protected array $data = [];
 
     public function __construct($data = [])
     {
@@ -18,11 +18,11 @@ class Resource implements \ArrayAccess, Arrayable, HasRequiredFields
     /**
      * For fluent constructing.
      *
-     * @param  array  $data
+     * @param array $data
      *
      * @return static
      */
-    public static function create($data = [])
+    public static function create(array $data = []): self
     {
         return new static($data);
     }
@@ -30,7 +30,7 @@ class Resource implements \ArrayAccess, Arrayable, HasRequiredFields
     /**
      * @return array
      */
-    public function getRequiredFields()
+    public function getRequiredFields(): array
     {
         return [];
     }
@@ -41,7 +41,7 @@ class Resource implements \ArrayAccess, Arrayable, HasRequiredFields
     public function containsAllRequiredFields(): bool
     {
         foreach ($this->getRequiredFields() as $requiredField) {
-            if ( ! array_key_exists($requiredField, $this->data)) {
+            if (! array_key_exists($requiredField, $this->data)) {
                 return false;
             }
         }
@@ -58,38 +58,38 @@ class Resource implements \ArrayAccess, Arrayable, HasRequiredFields
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      *
      * @return bool
      */
-    public function offsetExists($offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return array_key_exists($offset, $this->data);
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      *
      * @return mixed|null
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->data[$offset] ?? null;
     }
 
     /**
-     * @param  string  $offset
-     * @param  mixed  $value
+     * @param mixed $offset
+     * @param mixed $value
      */
-    public function offsetSet($offset, $value): void
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->data[$offset] = $value;
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->data[$offset]);
     }

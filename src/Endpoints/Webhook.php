@@ -15,7 +15,7 @@ class Webhook extends Endpoint
      * @throws ParcelProException
      * @throws GuzzleException
      */
-    public function create(array $webhook)
+    public function create(array $webhook): array|string
     {
         $userId = $this->client->getUserId();
         $date   = $this->client->getDateTime();

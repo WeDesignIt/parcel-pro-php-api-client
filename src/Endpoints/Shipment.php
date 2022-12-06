@@ -23,7 +23,7 @@ class Shipment extends Endpoint
      * @throws ParcelProException
      * @throws GuzzleException
      */
-    public function list($filters = []): array
+    public function list(array $filters = []): array
     {
         $userId = $this->client->getUserId();
         $date   = $this->client->getDateTime();

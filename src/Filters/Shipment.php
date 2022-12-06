@@ -29,9 +29,9 @@ class Shipment implements \ArrayAccess
     /**
      * @var array
      */
-    protected $filters = [];
+    protected array $filters = [];
 
-    public function __construct($filters = [])
+    public function __construct(array $filters = [])
     {
         $this->filters = $filters;
     }
@@ -39,7 +39,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  int  $id
+     * @param int $id
      *
      * @return $this
      */
@@ -53,7 +53,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $orderNumber
+     * @param string $orderNumber
      *
      * @return $this
      */
@@ -67,7 +67,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $reference
+     * @param string $reference
      *
      * @return $this
      */
@@ -81,7 +81,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  DateTime  $from
+     * @param DateTime $from
      *
      * @return $this
      */
@@ -93,7 +93,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  DateTime  $from
+     * @param DateTime $from
      *
      * @return $this
      */
@@ -107,7 +107,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  DateTime  $to
+     * @param DateTime $to
      *
      * @return $this
      */
@@ -121,7 +121,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $status
+     * @param string $status
      *
      * @return $this
      */
@@ -135,7 +135,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  int  $limit
+     * @param int $limit
      *
      * @return $this
      */
@@ -151,7 +151,7 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $order
+     * @param string $order
      *
      * @return $this
      */
@@ -171,38 +171,38 @@ class Shipment implements \ArrayAccess
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      *
      * @return bool
      */
-    public function offsetExists($offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return array_key_exists($offset, $this->filters);
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      *
      * @return mixed|null
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->filters[$offset] ?? null;
     }
 
     /**
-     * @param  mixed  $offset
-     * @param  mixed  $value
+     * @param mixed $offset
+     * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->filters[$offset] = $value;
     }
 
     /**
-     * @param  string  $offset
+     * @param string $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->filters[$offset]);
     }

@@ -16,7 +16,7 @@ class Account extends Endpoint
      * @throws ParcelProException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function exists($email)
+    public function exists(string $email) : array|string
     {
         $userId = $this->client->getUserId();
 
@@ -34,8 +34,10 @@ class Account extends Endpoint
      * @param  string  $email
      *
      * @return bool
+     * @throws ParcelProException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function isExisting($email): bool
+    public function isExisting(string $email): bool
     {
         $response = $this->exists($email);
 
@@ -51,7 +53,7 @@ class Account extends Endpoint
      * @throws ParcelProException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function create(array $data)
+    public function create(array $data) : array|string
     {
         $userId = $this->client->getUserId();
         $email  = $data['email'] ?? '';

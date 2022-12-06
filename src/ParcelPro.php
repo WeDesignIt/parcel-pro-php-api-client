@@ -12,10 +12,8 @@ use WeDesignIt\ParcelPro\Endpoints\Webhook;
 
 class ParcelPro
 {
-    /**
-     * @var Client
-     */
-    private $client;
+
+    private Client $client;
 
     /**
      * ProductFlow constructor.

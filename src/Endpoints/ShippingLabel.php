@@ -13,22 +13,22 @@ class ShippingLabel extends Endpoint
      *
      * @see https://login.parcelpro.nl/api/docs/#operation--label-afdrukken
      *
-     * @param  int  $shipmentId
-     * @param  bool  $pdf (default = true)
+     * @param int $shipmentId
+     * @param bool $pdf (default = true)
      *
      * @return ResponseInterface
      * @throws GuzzleException
      */
-    public function get(int $shipmentId, bool $pdf = true)
+    public function get(int $shipmentId, bool $pdf = true): ResponseInterface
     {
         $userId = $this->client->getUserId();
 
         return $this->client->rawRequest('post', 'validate_apikey.php', [
             'json' => [
                 'GebruikerId' => $userId,
-                'ZendingId'   => $shipmentId,
-                'PrintPdf'    => (int) $pdf,
-                'HmacSha256'  => $this->client->getHash(compact('userId',
+                'ZendingId' => $shipmentId,
+                'PrintPdf' => (int) $pdf,
+                'HmacSha256' => $this->client->getHash(compact('userId',
                     'shipmentId')),
             ],
         ]);

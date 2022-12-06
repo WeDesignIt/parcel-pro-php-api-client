@@ -6,10 +6,8 @@ use WeDesignIt\ParcelPro\Client;
 
 abstract class Endpoint
 {
-    /**
-     * @var Client
-     */
-    protected $client;
+
+    protected Client $client;
 
     /**
      * Resource constructor.

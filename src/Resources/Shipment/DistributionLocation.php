@@ -20,13 +20,13 @@ class DistributionLocation extends Resource
     /**
      * @return string[]
      */
-    public function getRequiredFields()
+    public function getRequiredFields(): array
     {
         return [];
     }
 
     /**
-     * @param  string  $id
+     * @param string $id
      *
      * @return $this
      */
@@ -38,7 +38,7 @@ class DistributionLocation extends Resource
     }
 
     /**
-     * @param  string  $type
+     * @param string $type
      *
      * @return $this
      */
@@ -50,7 +50,7 @@ class DistributionLocation extends Resource
     }
 
     /**
-     * @param  string  $name
+     * @param string $name
      *
      * @return $this
      */
@@ -62,7 +62,7 @@ class DistributionLocation extends Resource
     }
 
     /**
-     * @param  string  $street
+     * @param string $street
      *
      * @return $this
      */
@@ -74,7 +74,7 @@ class DistributionLocation extends Resource
     }
 
     /**
-     * @param  string  $houseNumber
+     * @param string $houseNumber
      *
      * @return $this
      */
@@ -86,43 +86,43 @@ class DistributionLocation extends Resource
     }
 
     /**
-     * @param  string  $houseNumberAddition
+     * @param string $houseNumberAddition
      *
      * @return $this
      */
-    public function houseNumberAddition(string $houseNumberAddition
-    ): DistributionLocation {
+    public function houseNumberAddition(string $houseNumberAddition): DistributionLocation
+    {
         $this->offsetSet(self::HOUSE_NUMBER_ADDITION, $houseNumberAddition);
 
         return $this;
     }
 
     /**
-     * @param  int  $postalCodeDigits
+     * @param int $postalCodeDigits
      *
      * @return $this
      */
-    public function postalCodeDigits(int $postalCodeDigits
-    ): DistributionLocation {
+    public function postalCodeDigits(int $postalCodeDigits): DistributionLocation
+    {
         $this->offsetSet(self::POSTAL_CODE_DIGITS, $postalCodeDigits);
 
         return $this;
     }
 
     /**
-     * @param  int  $postalCodeLetters
+     * @param int $postalCodeLetters
      *
      * @return $this
      */
-    public function postalCodeLetters(int $postalCodeLetters
-    ): DistributionLocation {
+    public function postalCodeLetters(int $postalCodeLetters): DistributionLocation
+    {
         $this->offsetSet(self::POSTAL_CODE_LETTERS, $postalCodeLetters);
 
         return $this;
     }
 
     /**
-     * @param  string  $city
+     * @param string $city
      *
      * @return $this
      */
