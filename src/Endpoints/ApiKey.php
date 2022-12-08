@@ -4,7 +4,6 @@ namespace WeDesignIt\ParcelPro\Endpoints;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
-use WeDesignIt\ParcelPro\Exceptions\ParcelProException;
 
 class ApiKey extends Endpoint
 {

@@ -10,5 +10,5 @@ interface HasRequiredFields
      *
      * @return array
      */
-    public function getRequiredFields();
+    public function getRequiredFields(): array;
 }

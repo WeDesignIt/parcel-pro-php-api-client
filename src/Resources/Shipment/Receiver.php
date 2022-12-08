@@ -31,7 +31,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $name
+     * @param string $name
      *
      * @return $this
      */
@@ -43,7 +43,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $directedTo
+     * @param string $directedTo
      *
      * @return $this
      */
@@ -55,7 +55,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $department
+     * @param string $department
      *
      * @return $this
      */
@@ -67,7 +67,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $street
+     * @param string $street
      *
      * @return $this
      */
@@ -79,7 +79,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $houseNumber
+     * @param string $houseNumber
      *
      * @return $this
      */
@@ -91,7 +91,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $houseNumberAddition
+     * @param string $houseNumberAddition
      *
      * @return $this
      */
@@ -103,7 +103,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $postalCode
+     * @param string $postalCode
      *
      * @return $this
      */
@@ -115,7 +115,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $city
+     * @param string $city
      *
      * @return $this
      */
@@ -127,7 +127,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $country
+     * @param string $country
      *
      * @return $this
      */
@@ -139,7 +139,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $email
+     * @param string $email
      *
      * @return $this
      */
@@ -151,7 +151,7 @@ class Receiver extends Resource
     }
 
     /**
-     * @param  string  $phoneNumber
+     * @param string $phoneNumber
      *
      * @return $this
      */

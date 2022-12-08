@@ -29,9 +29,9 @@ class Shipment implements \ArrayAccess
     /**
      * @var array
      */
-    protected $filters = [];
+    protected array $filters = [];
 
-    public function __construct($filters = [])
+    public function __construct(array $filters = [])
     {
         $this->filters = $filters;
     }
@@ -39,11 +39,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  int  $id
+     * @param int $id
      *
-     * @return $this
+     * @return self
      */
-    public function shipmentId(int $id): Shipment
+    public function shipmentId(int $id): self
     {
         $this->offsetSet(self::SHIPMENT_ID, $id);
 
@@ -53,11 +53,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $orderNumber
+     * @param string $orderNumber
      *
-     * @return $this
+     * @return self
      */
-    public function orderNumber(string $orderNumber): Shipment
+    public function orderNumber(string $orderNumber): self
     {
         $this->offsetSet(self::ORDERNUMBER, $orderNumber);
 
@@ -67,11 +67,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $reference
+     * @param string $reference
      *
-     * @return $this
+     * @return self
      */
-    public function reference(string $reference): Shipment
+    public function reference(string $reference): self
     {
         $this->offsetSet(self::REFERENCE, $reference);
 
@@ -81,11 +81,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  DateTime  $from
+     * @param DateTime $from
      *
-     * @return $this
+     * @return self
      */
-    public function since(DateTime $from): Shipment
+    public function since(DateTime $from): self
     {
         return $this->from($from);
     }
@@ -93,11 +93,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  DateTime  $from
+     * @param DateTime $from
      *
-     * @return $this
+     * @return self
      */
-    public function from(DateTime $from): Shipment
+    public function from(DateTime $from): self
     {
         $this->offsetSet(self::FROM_DATETIME, $from->format('Y-m-d H:i:s'));
 
@@ -107,11 +107,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  DateTime  $to
+     * @param DateTime $to
      *
-     * @return $this
+     * @return self
      */
-    public function to(DateTime $to): Shipment
+    public function to(DateTime $to): self
     {
         $this->offsetSet(self::TO_DATETIME, $to->format('Y-m-d H:i:s'));
 
@@ -121,11 +121,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $status
+     * @param string $status
      *
-     * @return $this
+     * @return self
      */
-    public function status(string $status): Shipment
+    public function status(string $status): self
     {
         $this->offsetSet(self::STATUS, $status);
 
@@ -135,11 +135,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  int  $limit
+     * @param int $limit
      *
-     * @return $this
+     * @return self
      */
-    public function limit(int $limit): Shipment
+    public function limit(int $limit): self
     {
         $limit = min($limit, 50);
 
@@ -151,11 +151,11 @@ class Shipment implements \ArrayAccess
     /**
      * Fluent setter
      *
-     * @param  string  $order
+     * @param string $order
      *
-     * @return $this
+     * @return self
      */
-    public function order(string $order): Shipment
+    public function order(string $order): self
     {
         $this->offsetSet(self::ORDER, $order);
 
@@ -171,38 +171,38 @@ class Shipment implements \ArrayAccess
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      *
      * @return bool
      */
-    public function offsetExists($offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         return array_key_exists($offset, $this->filters);
     }
 
     /**
-     * @param  mixed  $offset
+     * @param mixed $offset
      *
      * @return mixed|null
      */
-    public function offsetGet($offset)
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->filters[$offset] ?? null;
     }
 
     /**
-     * @param  mixed  $offset
-     * @param  mixed  $value
+     * @param mixed $offset
+     * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->filters[$offset] = $value;
     }
 
     /**
-     * @param  string  $offset
+     * @param string $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset(mixed $offset): void
     {
         unset($this->filters[$offset]);
     }
