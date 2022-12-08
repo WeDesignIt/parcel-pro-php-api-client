@@ -23,7 +23,7 @@ class ShippingLabel extends Endpoint
     {
         $userId = $this->client->getUserId();
 
-        return $this->client->rawRequest('post', 'validate_apikey.php', [
+        return $this->client->rawRequest('post', 'label.php', [
             'json' => [
                 'GebruikerId' => $userId,
                 'ZendingId' => $shipmentId,
