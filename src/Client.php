@@ -12,28 +12,19 @@ class Client
     /**
      * @var string
      */
-    protected $baseUrl = 'https://login.parcelpro.nl/api/';
+    protected string $baseUrl = 'https://login.parcelpro.nl/api/';
 
-    /**
-     * @var GuzzleClient
-     */
-    protected $client;
+    protected ?GuzzleClient $client;
 
-    /**
-     * @var int
-     */
-    private $userId;
+    private int $userId;
 
-    /**
-     * @var string
-     */
-    private $apiKey;
+    private string $apiKey;
 
     /**
      * Client constructor.
      *
-     * @param  int  $userId
-     * @param  string  $apiKey
+     * @param int $userId
+     * @param string $apiKey
      */
     public function __construct(int $userId, string $apiKey)
     {
@@ -42,7 +33,7 @@ class Client
 
         $this->client = new GuzzleClient([
             'base_uri' => $this->baseUrl,
-            'headers'  => [
+            'headers' => [
                 'Accept' => 'application/json',
             ],
         ]);
@@ -51,7 +42,7 @@ class Client
     /**
      * Returns the hash for signing
      *
-     * @param  array  $data
+     * @param array $data
      *
      * @return string
      */
@@ -63,7 +54,7 @@ class Client
     /**
      * Returns formatted datetime for 'Datum' field
      *
-     * @param  \DateTime|null  $when
+     * @param \DateTime|null $when
      *
      * @return string
      */
@@ -85,9 +76,9 @@ class Client
     }
 
     /**
-     * @param  string  $method
-     * @param  string  $uri
-     * @param  array  $options
+     * @param string $method
+     * @param string $uri
+     * @param array $options
      *
      * @return array|string Array if the response was JSON, raw response body otherwise.
      * @throws ParcelProException
@@ -97,7 +88,8 @@ class Client
         string $method,
         string $uri,
         array $options = []
-    ) {
+    ): array|string
+    {
         $response = $this->rawRequest($method, $uri, $options);
 
         $contents = $response->getBody()->getContents();
@@ -118,9 +110,9 @@ class Client
     }
 
     /**
-     * @param  string  $method
-     * @param  string  $uri
-     * @param  array  $options
+     * @param string $method
+     * @param string $uri
+     * @param array $options
      *
      * @return ResponseInterface
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -129,7 +121,8 @@ class Client
         string $method,
         string $uri,
         array $options = []
-    ): ResponseInterface {
+    ): ResponseInterface
+    {
         return $this->client->request($method, $uri, $options);
     }
 
