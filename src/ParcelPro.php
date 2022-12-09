@@ -16,7 +16,7 @@ class ParcelPro
     private Client $client;
 
     /**
-     * ProductFlow constructor.
+     * ParcelPro constructor.
      *
      * @param  Client  $client
      */
