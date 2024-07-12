@@ -6,6 +6,13 @@
 composer require wedesignit/parcel-pro-php-api-client
 ```
 
+### Versions and PHP compatibility
+
+| Version | PHP Version |
+|---------|-------------|
+| 2.1.x   | >= 8.1      |
+| 2.0.x   | >= 8.0      |
+
 ## Creating the connector
 
 ```php
